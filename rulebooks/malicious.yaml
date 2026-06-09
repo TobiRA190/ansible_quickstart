@@ -14,7 +14,7 @@
           name: deletefiles.yaml
           extra_vars:
             file_path: "{{ event.payload.paths }}"
-            
+         
     - name: Regular Ping
       condition: event.payload.message == "pingpong"
       action:
