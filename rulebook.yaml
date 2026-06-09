@@ -1,0 +1,14 @@
+---
+- name: Listen for webhook events
+  hosts: all
+  sources:
+    - ansible.eda.webhook:
+        host: 10.120.3.122
+        port: 5000
+
+  rules:
+    - name: Run job if event received
+      condition: event.payload.message is defined
+      action:
+        run_playbook:
+          name: playbook.yaml

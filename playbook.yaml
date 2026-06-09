@@ -1,0 +1,25 @@
+- name: My first play
+  hosts: myhosts
+  tasks:
+   - name: Ping my hosts
+     ansible.windows.win_ping:
+
+   - name: Get product id and product key
+     ansible.windows.win_product_facts:
+
+   - name: Display Windows edition
+     debug:
+       var: ansible_facts["os_license_edition"]
+
+   - name: Display Windows license status
+     debug:
+       var: ansible_facts["os_license_status"]
+       
+   - name: run the setup facts
+     ansible.windows.setup:
+      
+   - name: Show all facts
+     debug:
+       var: ansible_facts
+
+

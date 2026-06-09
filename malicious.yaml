@@ -1,0 +1,22 @@
+---
+- name: Listen for webhook events
+  hosts: all
+  sources:
+    - ansible.eda.webhook:
+        host: 10.120.3.122
+        port: 5000
+
+  rules:
+    - name: Handle malicious file
+      condition: event.payload.message == "malicious files"
+      action:
+        run_playbook:
+          name: deletefiles.yaml
+          extra_vars:
+            file_path: "{{ event.payload.paths }}"
+            
+    - name: Regular Ping
+      condition: event.payload.message == "pingpong"
+      action:
+        run_playbook:
+          name: playbook.yaml
