@@ -9,7 +9,7 @@
         state: absent
       loop: "{{ file_path }}"
       
-    - name: Create log file is absent
+    - name: Create log file if absent
       ansible.windows.win_file:
         path: C:\Users\Tobi\Desktop\malware_cleanup.log
         state: touch
