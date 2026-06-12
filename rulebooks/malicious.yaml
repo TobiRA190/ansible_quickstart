@@ -3,7 +3,7 @@
   hosts: all
   sources:
     - ansible.eda.webhook:
-        host: 192.168.201.129
+        host: 192.168.1.116
         port: 5000
 
   rules:
@@ -14,9 +14,9 @@
           name: deletefiles.yaml
           extra_vars:
             file_path: "{{ event.payload.paths }}"
-         
+
     - name: Regular Ping
-      condition: event.payload.message == "pingpong"
+      condition: event.payload.message == "check os"
       action:
         run_playbook:
           name: playbook.yaml
