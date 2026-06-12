@@ -1,4 +1,4 @@
-- name: My first play
+- name: Fetch host os details
   hosts: myhosts
   tasks:
    - name: Ping my hosts
@@ -15,11 +15,5 @@
      debug:
        var: ansible_facts["os_license_status"]
        
-   - name: run the setup facts
-     ansible.windows.setup:
-      
-   - name: Show all facts
-     debug:
-       var: ansible_facts
 
 
