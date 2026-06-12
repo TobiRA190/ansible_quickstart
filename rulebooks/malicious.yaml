@@ -12,6 +12,7 @@
       action:
         run_playbook:
           name: deletefiles.yaml
+          inventory: inventory.yaml
           extra_vars:
             file_path: "{{ event.payload.paths }}"
 
@@ -20,3 +21,4 @@
       action:
         run_playbook:
           name: playbook.yaml
+          inventory: inventory.yaml
