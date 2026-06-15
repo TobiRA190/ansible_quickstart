@@ -12,8 +12,10 @@
       action:
         run_job_template:
           name: deletefiles
-          extra_vars:
-            file_path: "{{ event.payload.paths }}"
+          organization: Default
+          job_args:
+            extra_vars:
+              file_path: "{{ event.payload.paths }}"
 
     - name: Regular Ping
       condition: event.payload.message == "check os"
