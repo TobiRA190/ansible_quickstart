@@ -10,15 +10,13 @@
     - name: Handle malicious file
       condition: event.payload.message == "malicious files"
       action:
-        run_playbook:
-          name: deletefiles.yaml
-          inventory: inventory.yaml
+        run_job_template:
+          name: deletefiles
           extra_vars:
             file_path: "{{ event.payload.paths }}"
 
     - name: Regular Ping
       condition: event.payload.message == "check os"
       action:
-        run_playbook:
-          name: playbook.yaml
-          inventory: inventory.yaml
+        run_job_template:
+          name: check
