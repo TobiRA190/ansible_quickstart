@@ -3,7 +3,7 @@
   hosts: all
   sources:
     - ansible.eda.webhook:
-        host: aap.example.org
+        host: test:test@aap.example.org
         port: 5000
 
   rules:
