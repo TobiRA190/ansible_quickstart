@@ -3,7 +3,7 @@
   hosts: all
   sources:
     - ansible.eda.webhook:
-        host: 10.120.3.122
+        host: 192.168.201.129
         port: 5000
 
   rules:
