@@ -11,9 +11,9 @@
 
     - name: Create log file if absent
       ansible.windows.win_file:
-        path: C:\Users\Tobi\Desktop\Log\malware_cleanup.log
+        path: C:\Users\Administrator\Desktop\Log\malware_cleanup.log
         state: touch
 
     - name: Log deletion
-      ansible.windows.win_shell: echo "{{ ansible_date_time.iso8601 }} - {{ item }} - deleted" >> C:\Users\Tobi\Desktop\Log\malware_cleanup.log
+      ansible.windows.win_shell: echo "{{ ansible_date_time.iso8601 }} - {{ item }} - deleted" >> C:\Users\Administrator\Desktop\Log\malware_cleanup.log
       loop: "{{ file_path }}"
