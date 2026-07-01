@@ -11,7 +11,7 @@
 
     - name: Create log file if absent
       ansible.windows.win_file:
-        path: C:\Users\Adminsitrator\Desktop\Log\malware_cleanup.log
+        path: C:\Users\Administrator\Desktop\Log\malware_cleanup.log
         state: touch
 
     - name: Log deletion
