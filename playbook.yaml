@@ -1,5 +1,6 @@
 - name: Fetch host os details
   hosts: win
+  gather_facts: no
   tasks:
    - name: Ping my hosts
      ansible.windows.win_ping:
