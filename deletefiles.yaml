@@ -1,5 +1,5 @@
 - name: Remove malicious files
-  hosts: myhosts
+  hosts: win
   gather_facts: true
 
   tasks:
